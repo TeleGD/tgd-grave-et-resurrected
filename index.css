@@ -1,0 +1,306 @@
+@import url("/reset.css");
+@import url("//fonts.googleapis.com/css?family=Press+Start+2P");
+@keyframes blink {
+	20% {
+		color: currentColor;
+	}
+	50% {
+		color: transparent;
+	}
+	80% {
+		color: currentColor;
+	}
+}
+/*~~~~~~ html, body ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+html {
+	scrollbar-width: none;
+	-moz-user-select: none;
+	user-select: none;
+}
+html::-webkit-scrollbar {
+	display: none;
+}
+body {
+	background-color: #000;
+	color: #fff;
+	font-family: "Press Start 2P", monospace;
+}
+/*~~~~~~ canvas ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+canvas {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 64rem;
+	height: 36rem;
+	margin: auto;
+	object-fit: contain;
+	object-position: center;
+}
+/*~~~~~~ section ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+section {
+	align-content: space-between;
+	justify-content: stretch;
+	display: grid;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 64rem;
+	height: 36rem;
+	margin: auto;
+	background: repeating-linear-gradient(to bottom, #fcc 0, #fcc .05rem, transparent .05rem, transparent 1.95rem, #fcc 1.95rem, #fcc 2rem), repeating-linear-gradient(to right, #fcc 0, #fcc .05rem, transparent .05rem, transparent 1.95rem, #fcc 1.95rem, #fcc 2rem);
+}
+section[hidden] {
+	display: none;
+}
+section > h1 {
+	margin: 1rem 2rem;
+	padding: 1rem 2rem;
+	color: transparent;
+	line-height: 1.5;
+	font-size: 2.6667rem;
+	font-variant-caps: small-caps;
+	text-align: center;
+	text-shadow: .2rem .2rem #fff, -.2rem -.2rem #f00;
+}
+section > p {
+	margin: 1rem 2rem;
+	padding: 1rem 2rem;
+	/* background-color: #fff6; */
+	line-height: 1.5;
+	font-size: 2rem;
+	text-align: center;
+	text-transform: uppercase;
+	/* box-shadow: inset 0 0 0 .1rem #fff, 0 0 0 .1rem #fff; */
+	animation: blink 4s linear infinite;
+}
+section > h2 {
+	margin: .5rem 1rem;
+	padding: .5rem 1rem;
+	background-color: #fff6;
+	color: #333f;
+	line-height: 1.25;
+	font-size: 1.6rem;
+}
+section#welcome > p > kbd,
+section#rules > p > kbd,
+section#rules > dl > dt > kbd {
+	padding: 0 .5rem;
+	border-radius: .5rem;
+	background-color: transparent;
+	text-transform: none;
+	box-shadow: inset 0 0 0 .1rem currentColor, 0 0 0 .1rem currentColor;
+}
+section#welcome {
+	background: url("./images/states/welcome/background.png") center / contain no-repeat;
+}
+section#rules {
+	grid-template-columns: 34rem 30rem;
+	background: url("./images/states/rules/background.png") center / contain no-repeat;
+}
+section#rules > h1 {
+	margin: 19rem 2rem 1rem 2rem;
+}
+section#rules > ul {
+	grid-gap: 1rem;
+	grid-template-columns: 2rem 1fr;
+	display: grid;
+	margin: 0;
+	padding: .5rem 1rem;
+	font-size: 1.2rem;
+}
+section#rules > ul > li {
+	display: contents;
+}
+section#rules > ul > li::before {
+	content: "~";
+	width: auto;
+	height: auto;
+	margin: 0;
+	border: none;
+	text-align: center;
+}
+section#rules > ul > li > p {
+	margin: 0;
+	text-align: left;
+}
+section#rules > dl {
+	grid-gap: 1rem;
+	grid-template-columns: 2rem 2rem 2rem 2rem 1fr;
+	display: grid;
+	margin: 0;
+	padding: .5rem 1rem;
+	font-size: 1.2rem;
+}
+section#rules > dl > dt {
+	display: contents;
+}
+section#rules > dl > dd {
+	display: contents;
+}
+section#rules > dl > dd::before {
+	display: none;
+}
+section#rules > dl > dt > kbd {
+	margin: .5rem 0;
+	line-height: 2rem;
+	text-align: center;
+}
+section#rules > dl > dd > p {
+	margin: 0;
+	text-align: left;
+}
+section#rules > h1:first-child {
+	grid-column: 1 / 2;
+	grid-row: 1 / 5;
+}
+section#rules > h1:first-child + p {
+	grid-column: 1 / 2;
+	grid-row: 5 / 6;
+}
+section#rules > h1:first-child + p + h2 {
+	grid-column: 2 / 3;
+	grid-row: 1 / 2;
+}
+section#rules > h1:first-child + p + h2 + ul {
+	grid-column: 2 / 3;
+	grid-row: 2 / 3;
+}
+section#rules > h1:first-child + p + h2 + ul + h2 {
+	grid-column: 2 / 3;
+	grid-row: 3 / 4;
+}
+section#rules > h1:first-child + p + h2 + ul + h2 + dl {
+	grid-column: 2 / 3;
+	grid-row: 4 / 6;
+}
+section#rules > ul > li:first-child::before {
+	grid-column: 1 / 2;
+}
+section#rules > ul > li:first-child > p {
+	grid-column: 2 / 3;
+}
+section#rules > ul > li:first-child + li::before {
+	grid-column: 1 / 2;
+}
+section#rules > ul > li:first-child + li > p {
+	grid-column: 2 / 3;
+}
+section#rules > ul > li:first-child + li + li::before {
+	grid-column: 1 / 2;
+}
+section#rules > ul > li:first-child + li + li > p {
+	grid-column: 2 / 3;
+}
+section#rules > ul > li:first-child + li + li + li::before {
+	grid-column: 1 / 2;
+}
+section#rules > ul > li:first-child + li + li + li > p {
+	grid-column: 2 / 3;
+}
+section#rules > dl > dt:first-child > kbd {
+	grid-column: 1 / 2;
+}
+section#rules > dl > dt:first-child + dt > kbd {
+	grid-column: 2 / 3;
+}
+section#rules > dl > dt:first-child + dt + dt > kbd {
+	grid-column: 3 / 4;
+}
+section#rules > dl > dt:first-child + dt + dt + dd > p {
+	grid-column: 4 / 6;
+}
+section#rules > dl > dt:first-child + dt + dt + dd + dt > kbd {
+	grid-column: 1 / 2;
+}
+section#rules > dl > dt:first-child + dt + dt + dd + dt + dt > kbd {
+	grid-column: 2 / 3;
+}
+section#rules > dl > dt:first-child + dt + dt + dd + dt + dt + dt > kbd {
+	grid-column: 3 / 4;
+}
+section#rules > dl > dt:first-child + dt + dt + dd + dt + dt + dt + dt > kbd {
+	grid-column: 4 / 5;
+}
+section#rules > dl > dt:first-child + dt + dt + dd + dt + dt + dt + dt + dd > p {
+	grid-column: 5 / 6;
+}
+section#rules > dl > dt:first-child + dt + dt + dd + dt + dt + dt + dt + dd + dt > kbd {
+	grid-column: 1 / 3;
+}
+section#rules > dl > dt:first-child + dt + dt + dd + dt + dt + dt + dt + dd + dt + dd > p {
+	grid-column: 3 / 6;
+}
+section#game > h1 {
+	opacity: 0;
+}
+section#pause > ul {
+	justify-self: center;
+	padding: 0 2rem;
+}
+section#pause > ul > li {
+	margin: 0 -2rem;
+}
+section#pause > ul > li::before {
+	content: none;
+}
+section#pause > ul > li > p > a:not([download]) {
+	position: relative;
+	display: block;
+	text-align: left;
+}
+section#pause > ul > li > p > a:not([download]):hover,
+section#pause > ul > li > p > a:not([download]):focus-within {
+	outline: 0;
+	outline-offset: 0;
+	text-decoration: none;
+}
+section#pause > ul > li > p > a:not([download])::before,
+section#pause > ul > li > p > a:not([download])::after {
+	position: absolute;
+	top: 50%;
+	width: 4rem;
+	color: #f00;
+	text-align: center;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity .4s;
+}
+section#pause > ul > li > p > a:not([download])::before {
+	content: ">>";
+	right: 100%;
+	transform: translate(-50%, -50%);
+}
+section#pause > ul > li > p > a:not([download])::after {
+	content: "<<";
+	left: 100%;
+	transform: translate(50%, -50%);
+}
+section#pause > ul > li > p > a:not([download]):hover::before,
+section#pause > ul > li > p > a:not([download]):focus-within::before,
+section#pause > ul > li > p > a:not([download]):hover::after,
+section#pause > ul > li > p > a:not([download]):focus-within::after {
+	opacity: 1;
+}
+/*~~~~~~ @media ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+@media (max-aspect-ratio: 16/9) {
+	html {
+		font-size: calc(25vw / 16);
+	}
+	/* section {
+		width: 100vw;
+		height: calc(225vw / 4);
+	} */
+}
+@media (min-aspect-ratio: 16/9) {
+	html {
+		font-size: calc(25vh / 9);
+	}
+	/* section {
+		width: calc(1600vh / 9);
+		height: 100vh;
+	} */
+}

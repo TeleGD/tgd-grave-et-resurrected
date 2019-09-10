@@ -1,0 +1,18 @@
+{
+  "name": "grave-et",
+  "version": "0.0.0",
+  "description": "",
+  "keywords": [
+      "vertical platformer"
+  ],
+  "repository": "https://github.com/telegd/tgd-grave-et-resurrected",
+  "author": "TeleGame Design",
+  "main": "index.mjs",
+  "browser": "index.mjs",
+  "module": "index.mjs",
+  "main": "index.mjs",
+  "dependencies": {
+    "noyo": "=0.0.1"
+  },
+  "private": true
+}
