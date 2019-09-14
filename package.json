@@ -12,7 +12,7 @@
   "module": "index.mjs",
   "main": "index.mjs",
   "dependencies": {
-    "noyo": "=0.0.1"
+    "noyo": "=0.0.2"
   },
   "private": true
 }
