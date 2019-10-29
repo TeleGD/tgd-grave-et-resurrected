@@ -5,6 +5,14 @@ staticCache.piqueH.src = "/tgd-grave-et-resurrected/images/states/world/platform
 staticCache.piqueV = document.createElement("img");
 staticCache.piqueV.src = "/tgd-grave-et-resurrected/images/states/world/platforms/spikesV.png";
 export default class Plateform extends Rectangle {
+	// static _piqueH;
+	// static _piqueV;
+	// _parent;
+	// _posX;
+	// _posY;
+	// _sens;
+	// _image;
+	// _destroyed;
 	constructor(parent, posX, posY, lengthiness, thickness, sens, image) {
 		super(posX, posY, sens ? lengthiness : thickness, sens ? thickness : lengthiness);
 		this._parent = parent;

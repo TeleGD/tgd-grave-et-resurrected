@@ -1,4 +1,8 @@
 export class Ellipse {
+	// _centerX;
+	// _centerY;
+	// _radiusX;
+	// _radiusY;
 	constructor(centerX, centerY, radiusX, radiusY = radiusX) {
 		this._centerX = centerX;
 		this._centerY = centerY;
@@ -55,6 +59,10 @@ export class Ellipse {
 	}
 };
 export class Rectangle {
+	// _locationX;
+	// _locationY;
+	// _sizeX;
+	// _sizeY;
 	constructor(locationX, locationY, sizeX, sizeY) {
 		this._locationX = locationX;
 		this._locationY = locationY;

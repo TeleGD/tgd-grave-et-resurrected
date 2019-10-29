@@ -1,5 +1,6 @@
 import Platform from "/tgd-grave-et-resurrected/scripts/states/world/platform.mjs";
 export default class Portal extends Platform {
+	// _couple;
 	constructor(parent, posX, posY, image) {
 		super(parent, posX, posY, 200, 140, false, image);
 		this._couple = this;

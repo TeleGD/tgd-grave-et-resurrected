@@ -1,4 +1,8 @@
 export default class Decoration {
+	// _parent;
+	// _x;
+	// _y;
+	// _image;
 	constructor(parent, x, y, image) {
 		this._parent = parent;
 		this._x = x;

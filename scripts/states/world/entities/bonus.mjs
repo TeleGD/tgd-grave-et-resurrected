@@ -1,6 +1,10 @@
 import {Ellipse} from "/tgd-grave-et-resurrected/scripts/utils/shapes.mjs";
 import Entity from "/tgd-grave-et-resurrected/scripts/states/world/entity.mjs";
 export default class Bonus extends Entity {
+	// _radius;
+	// _shape;
+	// _color;
+	// _image;
 	constructor(parent, posX, posY, radius, colorOrImage) {
 		super(parent, posX, posY, 1 / 3);
 		this._radius = radius,
@@ -30,12 +34,12 @@ export default class Bonus extends Entity {
 			canvasContext.drawImage(this._image, 0, 0, this._image.width, this._image.height, this.posX, this.parent.parent.height / 2 + this.posY - this.parent.parent.player.posY, this._radius * 2, this.parent.parent.height / 2 + this._radius * 2);
 		}
 	}
+	apply(player) {}
+	isApplied() {}
 	get shape() {
 		return this._shape;
 	}
 	get radius() {
 		return this._radius;
 	}
-	apply(player) {}
-	isApplied() {}
 };

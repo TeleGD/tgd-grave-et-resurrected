@@ -1,4 +1,6 @@
 export default class Interface {
+	// _parent;
+	// _player;
 	constructor(parent, player) {
 		this._parent = parent;
 		this._player = player;

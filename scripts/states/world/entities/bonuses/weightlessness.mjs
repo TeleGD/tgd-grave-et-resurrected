@@ -4,6 +4,10 @@ const staticCache = {};
 staticCache.image = document.createElement("img");
 staticCache.image.src = "/tgd-grave-et-resurrected/images/states/world/entities/bonuses/weightlessness.png";
 export default class Weightlessness extends Bonus {
+	// static _image;
+	// _applied;
+	// _count;
+	// _player;
 	constructor(parent, posX, posY, radius) {
 		super(parent, posX, posY, radius, staticCache.image);
 		// super.freeze();

@@ -2,6 +2,10 @@ const staticCache = {};
 staticCache.souls = document.createElement("img");
 staticCache.souls.src = "/tgd-grave-et-resurrected/images/states/world/souls.png";
 export default class DeathLine {
+	// static _souls;
+	// _parent;
+	// _posY;
+	// _speed;
 	constructor(parent) {
 		this._parent = parent;
 		this._posY = parent.height * 3;

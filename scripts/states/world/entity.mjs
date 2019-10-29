@@ -1,6 +1,20 @@
 const staticCache = {}
 staticCache.gravity = .00144;
 export default class Entity {
+	// static _gravity; // BUG: conflict with instance field _gravity
+	// _parent;
+	// _frozen;
+	// _gravity;
+	// _dilation;
+	// _dirX;
+	// _dirY;
+	// _posX;
+	// _posY;
+	// _speedX;
+	// _speedY;
+	// _accX;
+	// _accY;
+	// _maxSpeed;
 	constructor(parent, posX, posY, dilation) {
 		this._parent = parent;
 		this._frozen = false;
@@ -30,9 +44,6 @@ export default class Entity {
 		this._posY += (this._speedY + this._dirY) * delta;
 	}
 	render({canvasContext}) {}
-	get parent() {
-		return this._parent;
-	}
 	isFrozen() {
 		return this._frozen;
 	}
@@ -69,6 +80,9 @@ export default class Entity {
 	teleport(posX, posY) {
 		this._posX = posX;
 		this._posY = posY;
+	}
+	get parent() {
+		return this._parent;
 	}
 	set gravity(gravity) {
 		this._gravity = gravity;

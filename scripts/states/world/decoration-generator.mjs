@@ -15,6 +15,9 @@ staticCache.decorations = [
 	return image;
 });
 export default class DecorationGenerator {
+	// static _decorations;
+	// _parent;
+	// _count;
 	constructor(parent) {
 		this._parent = parent;
 		this._count = -3 * this._parent.height;

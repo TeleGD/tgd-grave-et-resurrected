@@ -9,16 +9,33 @@ import Interface from "/tgd-grave-et-resurrected/scripts/states/world/interface.
 import Player from "/tgd-grave-et-resurrected/scripts/states/world/entities/player.mjs";
 import PlatformGenerator from "/tgd-grave-et-resurrected/scripts/states/world/platform-generator.mjs";
 import Portal from "/tgd-grave-et-resurrected/scripts/states/world/platforms/portal.mjs";
-const defouloir = document.createElement("audio");
-defouloir.src = "/tgd-grave-et-resurrected/musics/defouloir.ogg";
-defouloir.loop = true;
-defouloir.volume = .4;
-const trash = document.createElement("audio");
-trash.src = "/tgd-grave-et-resurrected/sounds/trash.ogg";
-trash.volume = .4;
+const staticCache = {};
+staticCache.defouloir = document.createElement("audio");
+staticCache.defouloir.src = "/tgd-grave-et-resurrected/musics/defouloir.ogg";
+staticCache.defouloir.loop = true;
+staticCache.defouloir.volume = .4;
+staticCache.trash = document.createElement("audio");
+staticCache.trash.src = "/tgd-grave-et-resurrected/sounds/trash.ogg";
+staticCache.trash.volume = .4;
 export default class World extends State {
+	// static _defouloir;
+	// static _trash;
+	// _width;
+	// _height;
+	// _player;
+	// _interface;
+	// _line;
+	// _platforms;
+	// _bonuses;
+	// _decorations;
+	// _platformGenerator;
+	// _bonusGenerator;
+	// _decorationGenerator;
+	// _color;
+	// _select;
+	// _start;
 	play() {
-		defouloir.play();
+		staticCache.defouloir.play();
 		this._width = 1280; // TODO: remove
 		this._height = 720; // TODO: remove
 		this._player = new Player(this, this._width / 2, 0, "Amos");
@@ -35,15 +52,15 @@ export default class World extends State {
 		this._start = initButton(true);
 	}
 	pause() {
-		defouloir.pause();
+		staticCache.defouloir.pause();
 	}
 	resume() {
-		defouloir.play();
+		staticCache.defouloir.play();
 		this._select = initButton(true);
 		this._start = initButton(true);
 	}
 	stop() {
-		defouloir.pause();
+		staticCache.defouloir.pause();
 	}
 	listen({emulatedGamepads}) {
 		for (const emulatedGamepad of emulatedGamepads) {
@@ -72,14 +89,14 @@ export default class World extends State {
 			const platform = this._platforms[i];
 			if (platform.posY >= this._line.posY || platform.destroyed) {
 				this._platforms.splice(i, 1);
-				trash.play(1);
+				staticCache.trash.play(1);
 			}
 		}
 		for (let i = this._bonuses.length - 1; i >= 0; i--) {
 			const bonus = this._bonuses[i];
 			if (bonus.isApplied() || bonus.posY >= this._line.posY) {
 				this._bonuses.splice(i, 1);
-				trash.play(1);
+				staticCache.trash.play(1);
 			}
 		}
 		this._platformGenerator.update({delta, goTo, goBack});

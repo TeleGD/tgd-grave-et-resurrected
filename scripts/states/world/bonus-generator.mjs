@@ -1,5 +1,7 @@
 import Weightlessness from "/tgd-grave-et-resurrected/scripts/states/world/entities/bonuses/weightlessness.mjs";
 export default class BonusGenerator {
+	// _parent;
+	// _count;
 	constructor(parent) {
 		this._parent = parent;
 		this._count = 0;

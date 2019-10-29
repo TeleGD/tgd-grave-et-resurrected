@@ -10,6 +10,33 @@ staticCache.rightArrow.src = "/tgd-grave-et-resurrected/images/states/world/enti
 staticCache.downArrow = document.createElement("img");
 staticCache.downArrow.src = "/tgd-grave-et-resurrected/images/states/world/entities/player/downArrow.png";
 export default class Player extends Entity {
+	// static _imageB;
+	// static _leftArrow;
+	// static _rightArrow;
+	// static _downArrow;
+	// _gravityPoint;
+	// _score;
+	// _portalCooldown;
+	// _width;
+	// _height;
+	// _baseSpeed;
+	// _jumpSpeed;
+	// _widthRelation;
+	// _heightRelation;
+	// _shapeWidth;
+	// _shapeHeight;
+	// _shapeStartHeight;
+	// _name;
+	// _platform;
+	// _shapeL;
+	// _shapeD;
+	// _shapeR;
+	// _currentShape;
+	// _background;
+	// _BUTTON_SPACE;
+	// _BUTTON_LEFT;
+	// _BUTTON_DOWN;
+	// _BUTTON_RIGHT;
 	constructor(parent, posX, posY, name) {
 		super(parent, posX, posY, 1);
 		this._gravityPoint = 8;
@@ -36,9 +63,6 @@ export default class Player extends Entity {
 		this._BUTTON_LEFT = false;
 		this._BUTTON_DOWN = false;
 		this._BUTTON_RIGHT = false;
-	}
-	get name() {
-		return this._name;
 	}
 	listen({emulatedGamepads}) {
 		for (const emulatedGamepad of emulatedGamepads) {
@@ -153,18 +177,21 @@ export default class Player extends Entity {
 			this.dirX += this._platform.speedX;
 			this.dirY += this._platform.speedY;
 		} else if (q) {
-			this.dirX = -baseSpeed;
+			this.dirX = -this._baseSpeed;
 			this._BUTTON_A = false;
 		} else if (d) {
-			this.dirX = baseSpeed;
+			this.dirX = this._baseSpeed;
 			this._BUTTON_D = false;
 		} else if (s) {
-			this.dirY = baseSpeed;
+			this.dirY = this._baseSpeed;
 			this._BUTTON_S = false;
 		} else if (z) {
-			this.dirY = -baseSpeed;
+			this.dirY = -this._baseSpeed;
 			this._BUTTON_W = false;
 		}
+	}
+	get name() {
+		return this._name;
 	}
 	get score() {
 		return this._score;

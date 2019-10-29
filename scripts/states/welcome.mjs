@@ -1,6 +1,8 @@
 import {State} from "/tgd-grave-et-resurrected/node_modules/noyo/state.mjs";
 import {initButton, listenButton} from "/tgd-grave-et-resurrected/scripts/utils/buttons.mjs";
 export default class Welcome extends State {
+	// _select;
+	// _start;
 	play() {
 		this._select = initButton(true);
 		this._start = initButton(true);

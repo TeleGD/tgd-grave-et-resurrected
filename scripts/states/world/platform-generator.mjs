@@ -15,6 +15,15 @@ staticCache.portalO.src = "/tgd-grave-et-resurrected/images/states/world/platfor
 staticCache.portalB = document.createElement("img");
 staticCache.portalB.src = "/tgd-grave-et-resurrected/images/states/world/platforms/bluePortal.png";
 export default class PlatformGenerator {
+	// static _plateformeH1;
+	// static _plateformeH2;
+	// static _plateformeV1;
+	// static _plateformeV2;
+	// static _portalO;
+	// static _portalB;
+	// _parent;
+	// _count;
+	// _totalCount;
 	constructor(parent) {
 		this._parent = parent;
 		this._count = Math.floor(Math.random() * 6);
@@ -32,9 +41,6 @@ export default class PlatformGenerator {
 				this._count--;
 			}
 		}
-	}
-	get parent() {
-		return this._parent;
 	}
 	createPlatform(normal, horizontal) {
 		if (horizontal) {
@@ -65,5 +71,8 @@ export default class PlatformGenerator {
 				this._parent.addPlatform(new MovingPlatform(this, Math.floor(Math.random() * 2) * (this._parent.width - 130) + 50, this._parent.height / 2 - 500 * this._parent.totalCount, 200, 30, horizontal, image));
 			}
 		}
+	}
+	get parent() {
+		return this._parent;
 	}
 };
